@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <template id="ik_tree_image_jsLoader" name="inouk_tree_image assets loader" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/inouk_tree_image/static/src/js/ik_tree_image.js"></script>
+            </xpath>
+        </template>
+    </data>
+</openerp>
