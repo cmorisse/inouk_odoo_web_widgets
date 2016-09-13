@@ -34,34 +34,44 @@ odoo.define('inouk_tree_image.widget', function (require) {
     var IKTreeImage = list_widget_registry.get('field.binary').extend({
         init: function () {
             this._super.apply(this, arguments);
-            this.DEFAULT_HEIGHT  = 64;
+            this.DEFAULT_HEIGHT  = 96;
         },
         
-        format: function (row_data, options) {
-            /* Return a valid img tag. For image fields, test if the
-             field's value contains just the binary size and retrieve
-            the image from the dedicated controller in that case.
-            Otherwise, assume a character field containing either a
-            stock Odoo icon name without path or extension or a fully
-            fledged location or data url */
+        _format: function (row_data, options) {
+            var styleModifier;
+            var imageData = null;
             
             var value = row_data[this.id].value;
-            if (!value)
-                return options.value_if_empty || '';
             
-            var imageData = null;
-            if (value.substr(0, 10).indexOf(' ') == -1) {
-                imageData = "data:image/png;base64," + value;
+            if (!value) {
+                imageData = '/web/static/src/img/placeholder.png';
             } else {
-                imageData = session.url('/web/binary/image', {
-                    model: options.model,
-                    field: this.id,
-                    id: options.id
-                });
+                /* Depending on 'value' content, either use value as image source
+                 * or fetch the image from the 'image' controller.
+                 */
+                if (value.substr(0, 10).indexOf(' ') == -1) {
+                    imageData = "data:image/png;base64," + value;
+                } else {
+                    imageData = session.url('/web/binary/image', {
+                        model: options.model,
+                        field: this.id,
+                        id: options.id
+                    });
+                }
             }
-            return _.template('<img height="<%-height%>" src="<%-src%>">')({
-                height: this.height || this.DEFAULT_HEIGHT,
+
+            /*
+             * User can define a class or an height.
+             * Note that height is ignored when class is supplied
+             */
+            if(this.class)
+                styleModifier = ' class='+this.class;
+            else
+                styleModifier = ' height='+(this.height || this.DEFAULT_HEIGHT);
+                
+            return _.template('<img src="<%-src%>"<%-styleModifier%>>')({
                 src: imageData,
+                styleModifier: styleModifier
             });
             
         }

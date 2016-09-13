@@ -7,17 +7,24 @@ Image default "height" is set to 64 pixels ; it can be specified as a parameter.
 Usage
 =====
 
-Install the `inouk_tree_image` addon then reference the `ik_tree_image` widget 
+Install the *inouk_tree_image* addon then reference the *ik_tree_image* widget 
 in your Tree views like this:
 
 .. code-block:: xml
     
     <field name="image_preview" widget="ik_tree_image" />
-    <!-- 
-        or 
-    -->
-    <field name="image_preview" widget="ik_tree_image" height="128"/>
 
+
+Parameters
+==========
+
+The widget accepts 2 parameters:
+
+* height 
+* class ; a classical class specifier
+
+If class is defined, height is ignored.
+If neither class nor height is specified, the widget inserts a height="96"
 
 
 License
