@@ -1,8 +1,9 @@
-Widget: ik_tree_image
-=====================
+Widget "ik_tree_image"
+======================
 
-This widget just display binary fields content as image in list/tree views.
-Image default "height" is set to 64 pixels ; it can be specified as a parameter.
+This widget displays Binary field content as image in list views.
+Image default "height" is set to 96 pixels ; it can be specified as a parameter
+or you can let a CSS class to the rendered image tag.
 
 Usage
 =====

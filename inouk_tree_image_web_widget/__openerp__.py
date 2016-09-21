@@ -18,7 +18,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 {
-    'name': 'Inouk Tree Image',
+    'name': "Inouk Tree Image (Web Widget)",
     'version': '9.0.0',
     'author': "Cyril MORISSE <cmorisse@boxes3.net>",
     'website': 'https://github.com/cmorisse/inouk_odoo_web_widgets',

@@ -19,18 +19,14 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 /* global odoo,_*/
-odoo.define('inouk_tree_image.widget', function (require) {
+odoo.define('inouk_tree_image_web_widget.tree_imagewidget', function (require) {
     "use strict";
     var core = require('web.core');
     var session = require('web.session');
     var QWeb = core.qweb;
     var list_widget_registry = core.list_widget_registry;
 
-
-    /*
-     * Options:
-     *  - value_if_empty ...
-     */
+     // TODO: Implement a user defined value if empty
     var IKTreeImage = list_widget_registry.get('field.binary').extend({
         init: function () {
             this._super.apply(this, arguments);
@@ -73,7 +69,6 @@ odoo.define('inouk_tree_image.widget', function (require) {
                 src: imageData,
                 styleModifier: styleModifier
             });
-            
         }
     });
 
