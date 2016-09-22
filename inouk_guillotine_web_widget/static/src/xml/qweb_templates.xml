@@ -4,15 +4,14 @@
     <t t-name="IKFieldGuillotineImage">
         <div class="oe_form_field form_field_ik_guillotine" t-att-style="widget.node.attrs.style">
             <t t-if="!widget.get('effective_readonly')">
-                <img t-att-id="widget.id" t-att-src="url"/>
                 <div class='guillotine_controls'>
-                  <button class='ikg_rotate_left'  type='button' title='Rotate left'> &lt; </button>
-                  <button class='ikg_zoom_out'     type='button' title='Zoom out'> - </button>
-                  <button class='ikg_fit'          type='button' title='Fit image'> [ ]  </button>
-                  <button class='ikg_zoom_in'      type='button' title='Zoom in'> + </button>
-                  <button class='ikg_rotate_right' type='button' title='Rotate right'> &gt; </button>
+                    <a href='#' id='rotate_left'  title='Rotate left'><i class='fa fa-rotate-left'></i></a>
+                    <a href='#' id='zoom_out'     title='Zoom out'><i class='fa fa-search-minus'></i></a>
+                    <a href='#' id='fit'          title='Fit image'><i class='fa fa-arrows-alt'></i></a>
+                    <a href='#' id='zoom_in'      title='Zoom in'><i class='fa fa-search-plus'></i></a>
+                    <a href='#' id='rotate_right' title='Rotate right'><i class='fa fa-rotate-right'></i></a>
                 </div>
-                
+                <img t-att-id="widget.id" t-att-src="url"/>
             </t>
             <t t-if="widget.get('effective_readonly')">
                 <img t-att-id="widget.id" t-att-src="url"/>

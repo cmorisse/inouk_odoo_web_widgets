@@ -5,10 +5,13 @@
             <xpath expr="." position="inside">
                 
                 <link href="/inouk_guillotine_web_widget/static/lib/guillotine/css/jquery.guillotine.css" rel="stylesheet" type="text/css" />
-    
                 <script type="text/javascript" src="/inouk_guillotine_web_widget/static/lib/guillotine/js/jquery.guillotine.js"></script>
-                
                 <script type="text/javascript" src="/inouk_guillotine_web_widget/static/src/js/ik_guillotine.js"></script>
+
+                <link href="/inouk_guillotine_web_widget/static/src/css/ik_guillotine.css" rel="stylesheet" type="text/css" />
+
+
+
             </xpath>
         </template>
     </data>

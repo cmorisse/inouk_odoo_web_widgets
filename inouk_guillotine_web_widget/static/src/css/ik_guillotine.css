@@ -1,0 +1,20 @@
+.guillotine_controls {
+    background-color: rgb(27, 27, 27);
+    text-align: center;
+}
+
+.guillotine_controls a {
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    font-weight: 300;
+    color: rgb(136, 136, 136);
+    padding: 0px 5%;
+    cursor: auto;
+}
+
+.guillotine_controls a:hover {
+    color: white;
+}
+
