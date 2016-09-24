@@ -70,10 +70,19 @@ odoo.define('inouk_guillotine_web_widget.guillotine_widget', function (require) 
             if(!this.get('effective_readonly')) {
                 // guillotine initialieation code
                 var picture = this.$el.find('div > img');  // Must be already loaded or cached!
-                picture.guillotine(this.options);
-                this.guillotine_widget = picture
-            }; 
-
+                var self = this;
+                picture.one('load', function() {
+                    picture.guillotine(self.options);
+                    self.guillotine_widget = picture;
+                    // Bind button actions
+                    self.$el.find('#rotate_left').click(function(){ picture.guillotine('rotateLeft'); });
+                    self.$el.find('#rotate_right').click(function(){ picture.guillotine('rotateRight'); });
+                    self.$el.find('#fit').click(function(){ picture.guillotine('fit'); });
+                    self.$el.find('#zoom_in').click(function(){ picture.guillotine('zoomIn'); });
+                    self.$el.find('#zoom_out').click(function(){ picture.guillotine('zoomOut'); });
+                    picture.guillotine('fit');
+                });
+            };
         },
         
         /**

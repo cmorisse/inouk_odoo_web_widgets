@@ -14,7 +14,7 @@
                 <img t-att-id="widget.id" t-att-src="url"/>
             </t>
             <t t-if="widget.get('effective_readonly')">
-                <img t-att-id="widget.id" t-att-src="url"/>
+                <img t-att-id="widget.id" t-att-src="url" width="100%" />
             </t>
         </div>
     </t>
